@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="display: inline-flex; gap:5px; justify-content: center;">
     <input
       type="radio"
       v-for="color in colors"
@@ -26,6 +26,7 @@
           'blue',
           'purple',
           'pink',
+          'brown',
         ]
       };
     },
