@@ -161,11 +161,15 @@
       </div>
       <div class="col s6 form-group">
         <label for="password">Password</label>
-        <input
-          type="password"
+        <div style="display: inline-flex;gap:5px;justify-content: center;">
+          <input
+          
+          :type="showPassword?'text':'password'"
           v-model="config.password"
-          class="form-control"
-        >
+          class="form-control"/>
+          <div @click="showPassword = false" v-if="showPassword">👁</div>
+          <div @click="showPassword = true" v-else>🔒</div>
+        </div>
       </div>
     </div>
     <slot />
@@ -194,6 +198,7 @@ import { findClient } from '@/lib/db/clients'
     data() {
       return {
         sslToggled: false,
+        showPassword: false
       }
     },
     computed: {
